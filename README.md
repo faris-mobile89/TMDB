@@ -1,7 +1,7 @@
 TMDB Client APP
 ===========
 
-A simple iOS app using Swift 2.3 that displays movies from TMDb. Written By : <a href ="http://goo.gl/eaohSg">Faris Abu Saleem</a>.
+A simple iOS app using Swift 2.3 that displays movies from TMDb. Written By : <a href ="https://ae.linkedin.com/in/farisfn">Faris Abu Saleem</a>.
 
 <h2>
 <a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link">
