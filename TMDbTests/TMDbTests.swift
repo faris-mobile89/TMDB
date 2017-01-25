@@ -18,20 +18,23 @@ class TMDbTests: XCTestCase, TMDBServiceViewProtocol {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         TMDBServiceWireFrame.testTMDBServiceModule(self)
-        
-
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        print("tearDown()")
     }
     
     func testFetchData(){
-        presenter?.fetchMovies(0, keywords: "")
-        
+        presenter?.fetchMovies(1, keywords: "")
         // Wait for the async request to complete
+        while !finished {
+            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
+        }
+    }
+    
+    func testFilterFetchData(){
+        presenter?.fetchMovies(1, maxYear: "2006", minYear: "1990", keywords: "")
         while !finished {
             NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
         }

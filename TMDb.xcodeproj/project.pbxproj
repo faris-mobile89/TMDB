@@ -30,6 +30,7 @@
 		64B603661E37E6C800E7BE94 /* TMDBConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B603651E37E6C800E7BE94 /* TMDBConfiguration.swift */; };
 		64B603681E37FA7300E7BE94 /* TMDBMasterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B603671E37FA7300E7BE94 /* TMDBMasterView.xib */; };
 		64B6036A1E37FC5400E7BE94 /* TMDBServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B603691E37FC5400E7BE94 /* TMDBServiceView.swift */; };
+		64F977AC1E391C67006C46C7 /* unit-test.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F977AB1E391C67006C46C7 /* unit-test.png */; };
 		766A3F7BD9167CCF87F3F673 /* Pods_TMDbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C12520EDEC5CFD9AA102FE /* Pods_TMDbUITests.framework */; };
 		D2A6EFA1A2FC493C9BF4BE45 /* Pods_TMDb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EF87FA2868F492785C695E /* Pods_TMDb.framework */; };
 		D43658FCA2312DE2718D8370 /* Pods_TMDbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2705E0F48083C586C80422E2 /* Pods_TMDbTests.framework */; };
@@ -85,6 +86,7 @@
 		64B603651E37E6C800E7BE94 /* TMDBConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBConfiguration.swift; sourceTree = "<group>"; };
 		64B603671E37FA7300E7BE94 /* TMDBMasterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMDBMasterView.xib; sourceTree = "<group>"; };
 		64B603691E37FC5400E7BE94 /* TMDBServiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBServiceView.swift; sourceTree = "<group>"; };
+		64F977AB1E391C67006C46C7 /* unit-test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unit-test.png"; sourceTree = "<group>"; };
 		6D57AFF355BCF11A07450E91 /* Pods-TMDbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDbUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMDbUITests/Pods-TMDbUITests.release.xcconfig"; sourceTree = "<group>"; };
 		718252BD68118EBE50DDF357 /* Pods-TMDbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMDbTests/Pods-TMDbTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D043BCEEF472FCEF81FF889 /* Pods-TMDbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDbUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMDbUITests/Pods-TMDbUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				645617A21E3916C30058F503 /* SimulatorScreen Shot1.png */,
 				645617A31E3916C30058F503 /* SimulatorScreen Shot2.png */,
 				645617A41E3916C30058F503 /* SimulatorScreen Shot3.png */,
+				64F977AB1E391C67006C46C7 /* unit-test.png */,
 			);
 			path = screenshots;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				64B603271E37DFAE00E7BE94 /* LaunchScreen.storyboard in Resources */,
 				64B603241E37DFAE00E7BE94 /* Assets.xcassets in Resources */,
 				645617A61E3916C30058F503 /* SimulatorScreen Shot2.png in Resources */,
+				64F977AC1E391C67006C46C7 /* unit-test.png in Resources */,
 				641D52A01E38AAF90062AC50 /* MovieCell.xib in Resources */,
 				64B603681E37FA7300E7BE94 /* TMDBMasterView.xib in Resources */,
 				645617A71E3916C30058F503 /* SimulatorScreen Shot3.png in Resources */,
