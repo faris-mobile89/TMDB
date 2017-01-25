@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,6 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterView" customModule="TMDb" customModuleProvider="target">
             <connections>
                 <outlet property="containterView" destination="E1I-ia-cCO" id="F5e-rZ-cBQ"/>
+                <outlet property="textFieldMaxYear" destination="yah-AQ-md8" id="nL7-6J-cSI"/>
+                <outlet property="textFieldMinYear" destination="6IC-7l-yh1" id="z7j-On-62l"/>
                 <outlet property="view" destination="iN0-l3-epB" id="m1Z-bP-6r1"/>
             </connections>
         </placeholder>
@@ -68,9 +70,12 @@
                         <constraint firstAttribute="height" constant="30" id="2Et-kD-i21"/>
                         <constraint firstAttribute="width" constant="100" id="kk3-IV-DQp"/>
                     </constraints>
-                    <state key="normal" title="Done">
+                    <state key="normal" title="Apply">
                         <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     </state>
+                    <connections>
+                        <action selector="donePressed:" destination="-1" eventType="touchUpInside" id="HCg-tF-o3h"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>

@@ -41,7 +41,9 @@ protocol TMDBServicePresenterProtocol: class
     */
     
     func fetchMovies(page:Int, keywords:String)
+    func fetchMovies(page:Int, maxYear:String, minYear:String, keywords:String)
 }
+
 
 protocol TMDBServiceInteractorOutputProtocol: class
 {
@@ -61,6 +63,7 @@ protocol TMDBServiceInteractorInputProtocol: class
     */
     
     func fetchMovies(page:Int, keywords:String)
+    func fetchMovies(page:Int, maxYear:String, minYear:String, keywords:String)
 
 }
 
@@ -79,5 +82,5 @@ protocol TMDBServiceAPIDataManagerInputProtocol: class
     */
     //primary_release_date.gte
     func discoverMovies(page:Int, keywords:String, success: (json:String) -> (), onError:(error:String)->())
-    func discoverMovies(page: Int, keywords: String, minYear: Int, maxYear: Int, success: (json:String) -> (), onError:(error:String)->())
+    func discoverMovies(page: Int, keywords: String, minYear: String, maxYear: String, success: (json:String) -> (), onError:(error:String)->())
 }

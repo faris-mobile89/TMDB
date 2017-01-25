@@ -26,4 +26,14 @@ class TMDBServiceInteractor: TMDBServiceInteractorInputProtocol
             }, onError: { (error) in
         })
     }
+    
+    func fetchMovies(page: Int, maxYear: String, minYear: String, keywords: String) {
+        APIDataManager?.discoverMovies(page, keywords: keywords, minYear: minYear, maxYear: maxYear, success: { (json) in
+            let movies = MoviesData(JSONString: json)
+            if let data = movies{
+                self.presenter?.onMoviesFetched(data)
+            }
+            }, onError: { (error) in
+        })
+    }
 }

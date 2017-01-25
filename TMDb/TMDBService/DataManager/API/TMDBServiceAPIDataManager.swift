@@ -18,7 +18,8 @@ class TMDBServiceAPIDataManager: TMDBServiceAPIDataManagerInputProtocol
     init() {}
     
     func discoverMovies(page: Int, keywords: String, success: (json:String) -> (), onError:(error:String)->()) {
-        let url = TMDBConfiguration.discoverAPIEndPoint + "&page=\(page)"
+        let url = TMDBConfiguration.discoverAPIEndPoint + "&page=\(page)" + "&primary_release_date.lte=2016" /*+ "&sort_by=primary_release_date.desc"*/
+        //print(url)
         HTTPRequest.GET(url, success: { (json) in
             success(json: json)
         }) { (error) in
@@ -26,7 +27,14 @@ class TMDBServiceAPIDataManager: TMDBServiceAPIDataManagerInputProtocol
         }
     }
     
-    func discoverMovies(page: Int, keywords: String, minYear: Int, maxYear: Int, success: (json: String) -> (), onError: (error: String) -> ()) {
+    func discoverMovies(page: Int, keywords: String, minYear: String, maxYear: String, success: (json: String) -> (), onError: (error: String) -> ()) {
+        let url = TMDBConfiguration.discoverAPIEndPoint + "&page=\(page)" + "&primary_release_date.gte=\(minYear)" + "&primary_release_date.lte=\(maxYear)" /*+ "&sort_by=primary_release_date.asc"*/
+        //print(url)
+        HTTPRequest.GET(url, success: { (json) in
+            success(json: json)
+        }) { (error) in
+            onError(error: error)
+        }
     }
 }
 

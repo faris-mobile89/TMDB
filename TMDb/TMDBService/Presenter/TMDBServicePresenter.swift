@@ -21,6 +21,11 @@ class TMDBServicePresenter: TMDBServicePresenterProtocol, TMDBServiceInteractorO
         interactor?.fetchMovies(page, keywords: keywords)
     }
     
+    func fetchMovies(page: Int, maxYear: String, minYear: String, keywords: String) {
+        view?.showProgress()
+        interactor?.fetchMovies(page, maxYear: maxYear, minYear: minYear, keywords: keywords)
+    }
+    
     func onMoviesFetched(moviesData: MoviesData) {
         view?.hideProgress()
         view?.onMoviesFetched(moviesData.total_pages!, page: moviesData.page!, movies: moviesData.results!)

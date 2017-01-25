@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TMDBMasterView: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,  TMDBServiceViewProtocol
+class TMDBMasterView: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,  TMDBServiceViewProtocol, FilterDelegate
 {
     var presenter: TMDBServicePresenterProtocol?
     
@@ -18,10 +18,12 @@ class TMDBMasterView: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let cellSpacingHeight = CGFloat(20.0)
     
+    var isFilterEnabled = false
+    
     // Pagination
     private var isLoading:Bool  = false
+    var filter:(maxYear:String, minYear:String)?
     private var pageNumber      = 0
-    
     
     override func viewDidLoad() {
         tableView.dataSource = self
@@ -32,16 +34,16 @@ class TMDBMasterView: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.backgroundView = UIView()
         self.title = "TMDb"
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(filter))
-
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(showFilter))
         loadData()
     }
     
-    func filter(){
+    func showFilter(){
         let popOverVC =  FilterView(nibName: "FilterView", bundle: nil)
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
+        popOverVC.delegate = self
         popOverVC.didMoveToParentViewController(self)
     }
     
@@ -56,7 +58,13 @@ class TMDBMasterView: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func getMoreItems(pageNumber:Int) -> () {
-        presenter?.fetchMovies(pageNumber, keywords: "")
+        if isFilterEnabled{
+            if let filterOb = filter{
+                presenter?.fetchMovies(pageNumber, maxYear: filterOb.maxYear, minYear: filterOb.minYear, keywords: "")
+            }
+        }else{
+            presenter?.fetchMovies(pageNumber, keywords: "")
+        }
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -98,20 +106,12 @@ class TMDBMasterView: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //performSegueWithIdentifier(AppStoryBoard.SEGUE_NEWS_DETAILS, sender: self)
+        let detailsView           = DetailsView(nibName: "DetailsView",bundle: nil)
+            detailsView.movieInfo = data[indexPath.section]
+        self.navigationController?.pushViewController(detailsView, animated: true)
     }
     
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "details_segue" {
-    //            let detailsView =  segue.destinationViewController as! MoviesDetailsView
-    //
-    //            if let indexPath = self.tableView.indexPathForSelectedRow {
-    //
-    //
-    //            }
-    //        }
-    //    }
-
+    
     // MARK:- TMDBService Delegate Methods
 
     func showProgress() {
@@ -141,9 +141,28 @@ class TMDBMasterView: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.beginUpdates()
         tableView.insertSections(indexSet, withRowAnimation: .Bottom)
         tableView.endUpdates()
-        
     }
     
-    
-    
+    // MARK:- FilterDelegate Delegate Methods
+    func onFilterPressed(MaxYear maxYear: String, minYear: String) {
+        //print("max = \(maxYear) min = \(minYear)")
+        data.removeAll()
+        tableView.reloadData()
+        pageNumber = 0
+        isFilterEnabled = true
+        
+        var maxParam = maxYear
+        var minParam = minYear
+        
+        if maxParam == ""{
+            maxParam = "2017"
+        }
+        
+        if minParam == ""{
+           minParam = "1960"
+        }
+        
+        filter = (maxParam, minParam)
+        loadData()
+    }
 }

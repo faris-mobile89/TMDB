@@ -41,7 +41,10 @@ class TMDBConfiguration {
     
     
     static func buildImagePath(poster_path:String)->String{
-        return "\(IMAGE_BASE_URL)w300\(poster_path)"
+        return "\(IMAGE_BASE_URL)w500\(poster_path)"
+    }
+    static func buildImagePathX3(poster_path:String)->String{
+        return "\(IMAGE_BASE_URL)w1000\(poster_path)"
     }
     
 }
