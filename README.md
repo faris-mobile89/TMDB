@@ -11,8 +11,8 @@ A simple iOS app using Swift 2.3 that displays movies from TMDb. <a href ="http:
 <ul class="task-list">
 <li>Written in a clean architecture</li>
 <li>Code resuable</li>
-<li>Multi-Tear layer</li>
-<li>Unit testing enabled for module</li>
+<li>Multi-Tier layer</li>
+<li>Unit testing enabled for TMDB module</li>
 <li>View & Filter movies by release date</li>
 </ul>
 
