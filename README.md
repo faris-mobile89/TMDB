@@ -23,15 +23,21 @@ A simple iOS app using Swift 2.3 that displays movies from TMDb. <a href ="http:
 
 
 <div align="left">
-     <img width="40%"  src="TMDb/screenshots/SimulatorScreen Shot1.png" alt="About screen" title="About screen"</img>
-     <img width="40%"  src="TMDb/screenshots/SimulatorScreen Shot2.png" alt="About screen" title="About screen"</img>
+     <img width="40%"  src="TMDb/screenshots/SimulatorScreen Shot1.png" alt="About screen" title="Home Page"</img>
+     <img width="40%"  src="TMDb/screenshots/SimulatorScreen Shot2.png" alt="About screen" title="Filter View"</img>
 
 </div>
 
 <br/><br/>
 
 <div align="left">
-    <img width="40%"  src="TMDb/screenshots/SimulatorScreen Shot3.png" alt="About screen" title="About screen"</img>
+    <img width="40%"  src="TMDb/screenshots/SimulatorScreen Shot3.png" alt="Details" title="About screen"</img>
+</div>
+
+<h1>Unit Testing Result</h1>
+
+<div align="left">
+    <img width="40%"  src="TMDb/screenshots/unit-test.png" alt="Unit Testing" title="About screen"</img>
 </div>
 
 
