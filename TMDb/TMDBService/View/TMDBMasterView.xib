@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TMDBMasterView" customModule="TMDb" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="emW-Fc-L82" id="fHi-nX-BdQ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="71x-KV-fzN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="193" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="emW-Fc-L82">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="emW-Fc-L82" secondAttribute="bottom" id="LzR-ST-k1B"/>
+                <constraint firstAttribute="trailing" secondItem="emW-Fc-L82" secondAttribute="trailing" id="Zgc-sh-Zbo"/>
+                <constraint firstItem="emW-Fc-L82" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rGm-P7-x4Q"/>
+                <constraint firstItem="emW-Fc-L82" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="t5F-9J-rh5"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
